@@ -21,11 +21,34 @@ public class BlogClient {
 
 //        createBlog(channel);
 //        readBlog(channel,"5e32d41d4312142195a47576");
-        readBlog(channel,"5e32d41d531214");
-
+//        readBlog(channel,"5e32d41d531214");
+        updateBlog(channel,"5e32d41d4312142195a47576");
         System.out.println("shutdown channel");
         channel.shutdown();
 
+
+    }
+
+    private void updateBlog(ManagedChannel channel, String blogId) {
+
+        BlogServiceGrpc.BlogServiceBlockingStub stubClient = BlogServiceGrpc.newBlockingStub(channel);
+
+        UpdateBlogRequest updateBlogRequest = UpdateBlogRequest.newBuilder()
+                .setBlog(
+                        Blog.newBuilder()
+                                .setId(blogId)
+                                .setAuthorId("abesss")
+                                .setTitle("second title")
+                                .setContent("hello~~~~~")
+                                .build()
+                )
+                .build();
+        try {
+            UpdateBlogResponse updateBlogResponse = stubClient.updateBlog(updateBlogRequest);
+            System.out.println(updateBlogResponse.toString());
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
 
     }
 
