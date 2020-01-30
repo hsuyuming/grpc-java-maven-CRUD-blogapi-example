@@ -19,15 +19,30 @@ public class BlogClient {
                         ).build()
                 ).build();
 
-//        createBlog(channel);
+//        IntStream.range(1,100).forEach(number -> {
+//            createBlog(channel,number);
+//        });
+
+
 //        readBlog(channel,"5e32d41d4312142195a47576");
 //        readBlog(channel,"5e32d41d531214");
 //        updateBlog(channel,"5e32d41d4312142195a47576");
-        deleteBlog(channel,"34234");
+//        deleteBlog(channel,"34234");
+        listBlog(channel);
         System.out.println("shutdown channel");
         channel.shutdown();
 
 
+    }
+
+    private void listBlog(ManagedChannel channel) {
+
+        BlogServiceGrpc.BlogServiceBlockingStub stubClient = BlogServiceGrpc.newBlockingStub(channel);
+
+        //we list the blogs in our database
+        stubClient.listBlog(ListBlogRequest.newBuilder().build()).forEachRemaining(
+                listBlogResponse-> System.out.println(listBlogResponse.toString())
+        );
     }
 
     private void deleteBlog(ManagedChannel channel, String blogId) {
@@ -90,14 +105,14 @@ public class BlogClient {
 
     }
 
-    private void createBlog(ManagedChannel channel) {
+    private void createBlog(ManagedChannel channel, int number) {
 
         BlogServiceGrpc.BlogServiceBlockingStub stubClient = BlogServiceGrpc.newBlockingStub(channel);
 
         Blog blog = Blog.newBuilder()
                 .setAuthorId("abehsu")
-                .setTitle("New Blog")
-                .setContent("Hello world, this is my first blog!")
+                .setTitle("New Blog - " + number)
+                .setContent("Hello world, this is my " + number + " blog!")
                 .build();
 
         CreateBlogResponse response =  stubClient.createBlog(CreateBlogRequest.newBuilder()
