@@ -1,9 +1,6 @@
 package com.github.abehsu.blog.client;
 
-import com.proto.blog.Blog;
-import com.proto.blog.BlogServiceGrpc;
-import com.proto.blog.CreateBlogRequest;
-import com.proto.blog.CreateBlogResponse;
+import com.proto.blog.*;
 import io.grpc.ManagedChannel;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
@@ -22,12 +19,32 @@ public class BlogClient {
                         ).build()
                 ).build();
 
-        createBlog(channel);
-
+//        createBlog(channel);
+//        readBlog(channel,"5e32d41d4312142195a47576");
+        readBlog(channel,"5e32d41d531214");
 
         System.out.println("shutdown channel");
         channel.shutdown();
 
+
+    }
+
+    private void readBlog(ManagedChannel channel, String blogId) {
+
+        BlogServiceGrpc.BlogServiceBlockingStub stubClient = BlogServiceGrpc.newBlockingStub(channel);
+
+        try {
+
+            ReadBlogResponse readBlogResponse =  stubClient.readBlog(ReadBlogRequest
+                    .newBuilder()
+                    .setBlogId(blogId)
+                    .build());
+
+            System.out.printf(readBlogResponse.toString());
+        } catch (RuntimeException e) {
+            System.out.println("Reading blog with non existing id.....");
+            e.printStackTrace();
+        }
 
     }
 

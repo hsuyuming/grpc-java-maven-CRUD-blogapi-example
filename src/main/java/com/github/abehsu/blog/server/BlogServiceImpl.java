@@ -54,14 +54,28 @@ public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
     @Override
     public void readBlog(ReadBlogRequest request, StreamObserver<ReadBlogResponse> responseObserver) {
 
+
         System.out.println("Received Read Blog request");
         String blogId = request.getBlogId();
 
         System.out.println("Searching for a blog");
-        Document result =collection.find(eq("_id",new ObjectId(blogId)))
-                .first();
 
-        if (request == null) {
+        Document result = null;
+
+        try {
+            result =collection.find(eq("_id",new ObjectId(blogId)))
+                    .first();
+        } catch (Exception e) {
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                            .withDescription(e.getLocalizedMessage())
+                            .asRuntimeException()
+            );
+//            return;
+
+        }
+
+        if (result == null ) {
             // we don't have a match
             System.out.println("Blog not found");
             responseObserver.onError(
@@ -69,6 +83,7 @@ public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
                     .withDescription("The blog with the corresponding id was not found")
                     .asRuntimeException()
             );
+            return;
         } else {
             System.out.println("Blog found, sending the response");
             Blog blog = Blog.newBuilder()
