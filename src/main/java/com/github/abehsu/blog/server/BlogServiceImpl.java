@@ -4,12 +4,13 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.proto.blog.Blog;
-import com.proto.blog.BlogServiceGrpc;
-import com.proto.blog.CreateBlogRequest;
-import com.proto.blog.CreateBlogResponse;
+import com.proto.blog.*;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import org.bson.Document;
+import org.bson.types.ObjectId;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
 
@@ -47,6 +48,42 @@ public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
         responseObserver.onNext(response);
 
         responseObserver.onCompleted();
+
+    }
+
+    @Override
+    public void readBlog(ReadBlogRequest request, StreamObserver<ReadBlogResponse> responseObserver) {
+
+        System.out.println("Received Read Blog request");
+        String blogId = request.getBlogId();
+
+        System.out.println("Searching for a blog");
+        Document result =collection.find(eq("_id",new ObjectId(blogId)))
+                .first();
+
+        if (request == null) {
+            // we don't have a match
+            System.out.println("Blog not found");
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                    .withDescription("The blog with the corresponding id was not found")
+                    .asRuntimeException()
+            );
+        } else {
+            System.out.println("Blog found, sending the response");
+            Blog blog = Blog.newBuilder()
+                    .setAuthorId(result.getString("author_id"))
+                    .setTitle(result.getString("title"))
+                    .setContent(result.getString("content"))
+                    .setId(blogId)
+                    .build();
+
+            responseObserver.onNext(ReadBlogResponse.newBuilder()
+                    .setBlog(blog)
+                    .build());
+
+            responseObserver.onCompleted();
+        }
 
     }
 }
