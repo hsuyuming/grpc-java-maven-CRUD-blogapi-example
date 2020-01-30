@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c7c37dd-9bbf-45d0-8f1e-3d1097e33281" name="Default Changelist" comment="" />
+    <list default="true" id="7c7c37dd-9bbf-45d0-8f1e-3d1097e33281" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,27 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/proto/blog/blog.proto">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="269">
+              <caret line="35" column="102" selection-start-line="35" selection-start-column="102" selection-end-line="35" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -67,14 +54,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" />
         <option value="$PROJECT_DIR$/src/main/proto/blog/blog.proto" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" />
       </list>
     </option>
   </component>
@@ -111,6 +101,7 @@
     <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -185,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580388711133" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580389521556" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -205,7 +196,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BlogClient">
+    <configuration name="BlogClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.abehsu.blog.client.BlogClient" />
+      <module name="grpcblogexample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.abehsu.blog.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BlogServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.abehsu.blog.server.BlogServer" />
       <module name="grpcblogexample" />
@@ -221,6 +225,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BlogClient" />
         <item itemvalue="Application.BlogServer" />
       </list>
     </recent_temporary>
@@ -242,12 +247,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580386348646</updated>
-      <workItem from="1580386353745" duration="2279000" />
+      <workItem from="1580386353745" duration="2894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2279000" />
+    <option name="totallyTimeSpent" value="2894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -266,7 +271,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
@@ -328,10 +333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="201">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -347,10 +352,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="269">
+          <caret line="35" column="102" selection-start-line="35" selection-start-column="102" selection-end-line="35" selection-end-column="102" />
         </state>
       </provider>
     </entry>
