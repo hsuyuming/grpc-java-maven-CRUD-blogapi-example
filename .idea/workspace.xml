@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c7c37dd-9bbf-45d0-8f1e-3d1097e33281" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/proto/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/proto/blog/blog.proto" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,9 +30,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="44" />
+            <state relative-caret-position="-945">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding>
+                <element signature="method#readBlog#0;class#BlogClient#0" />
                 <element signature="method#createBlog#0;class#BlogClient#0" />
               </folding>
             </state>
@@ -51,14 +52,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="182" column="47" selection-start-line="182" selection-start-column="47" selection-end-line="182" selection-end-column="47" />
+            <state relative-caret-position="166">
+              <caret line="173" column="49" selection-start-line="173" selection-start-column="49" selection-end-line="173" selection-end-column="49" />
               <folding>
                 <element signature="method#createBlog#0;class#BlogServiceImpl#0" />
                 <element signature="method#readBlog#0;class#BlogServiceImpl#0" />
                 <element signature="method#updateBlog#0;class#BlogServiceImpl#0" />
                 <element signature="method#documentToBlog#0;class#BlogServiceImpl#0" />
-                <marker date="1580402119159" expanded="true" signature="2290:2471" ph="..." />
+                <marker date="1580402379126" expanded="true" signature="2290:2471" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,8 +121,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" />
         <option value="$PROJECT_DIR$/src/main/proto/blog/blog.proto" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java" />
       </list>
     </option>
@@ -242,7 +243,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580402122994" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1580402386479" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -263,7 +264,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BlogServer">
+  <component name="RunManager" selected="Application.BlogClient">
     <configuration name="BlogClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.abehsu.blog.client.BlogClient" />
       <module name="grpcblogexample" />
@@ -292,8 +293,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BlogServer" />
         <item itemvalue="Application.BlogClient" />
+        <item itemvalue="Application.BlogServer" />
       </list>
     </recent_temporary>
   </component>
@@ -314,12 +315,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580386348646</updated>
-      <workItem from="1580386353745" duration="14640000" />
+      <workItem from="1580386353745" duration="14899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14640000" />
+    <option name="totallyTimeSpent" value="14899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -331,7 +332,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -341,7 +342,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32941177" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -464,16 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="44" />
-          <folding>
-            <element signature="method#createBlog#0;class#BlogClient#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/proto/blog/blog.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
@@ -481,16 +472,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/client/BlogClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-945">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="method#readBlog#0;class#BlogClient#0" />
+            <element signature="method#createBlog#0;class#BlogClient#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/abehsu/blog/server/BlogServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="182" column="47" selection-start-line="182" selection-start-column="47" selection-end-line="182" selection-end-column="47" />
+        <state relative-caret-position="166">
+          <caret line="173" column="49" selection-start-line="173" selection-start-column="49" selection-end-line="173" selection-end-column="49" />
           <folding>
             <element signature="method#createBlog#0;class#BlogServiceImpl#0" />
             <element signature="method#readBlog#0;class#BlogServiceImpl#0" />
             <element signature="method#updateBlog#0;class#BlogServiceImpl#0" />
             <element signature="method#documentToBlog#0;class#BlogServiceImpl#0" />
-            <marker date="1580402119159" expanded="true" signature="2290:2471" ph="..." />
+            <marker date="1580402379126" expanded="true" signature="2290:2471" ph="..." />
           </folding>
         </state>
       </provider>

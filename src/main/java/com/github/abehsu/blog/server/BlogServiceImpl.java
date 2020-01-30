@@ -171,6 +171,7 @@ public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
         try {
             result = collection.deleteOne(eq("_id", new ObjectId(blogId)));
         } catch (Exception e ) {
+            System.out.println("Blog not found");
             responseObserver.onError(
                     Status.NOT_FOUND
                     .withDescription(e.getLocalizedMessage())
@@ -180,7 +181,7 @@ public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
         }
 
         if ( result.getDeletedCount() == 0 ) {
-            System.out.println("tBlog not found");
+            System.out.println("Blog not found");
             responseObserver.onError(
                     Status.NOT_FOUND
                             .withDescription("The blog with the corresponding id was not found")
