@@ -101,4 +101,68 @@ public class BlogServiceImpl extends BlogServiceGrpc.BlogServiceImplBase {
         }
 
     }
+
+    @Override
+    public void updateBlog(UpdateBlogRequest request, StreamObserver<UpdateBlogResponse> responseObserver) {
+
+        System.out.println("Received Update Blog request");
+
+        Blog blog = request.getBlog();
+
+        String blogId = blog.getId();
+
+        Document result = null;
+
+        System.out.println("Searching for a blog so we can update it");
+        try {
+            result = collection.find(eq("_id", new ObjectId(blogId)))
+                    .first();
+        } catch (Exception e) {
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                    .withDescription(e.getLocalizedMessage())
+                    .asRuntimeException()
+            );
+            return;
+        }
+
+        if ( result == null ) {
+            System.out.println(" Blog not find ");
+            responseObserver.onError(
+                    Status.NOT_FOUND
+                    .withDescription("The blog with the corresponding id was not found")
+                    .asRuntimeException()
+            );
+        } else {
+
+            Document replacement = new Document("author_id", blog.getAuthorId())
+                    .append("title", blog.getTitle())
+                    .append("content", blog.getContent());
+
+            System.out.println("Replaced! Sending as a response");
+            collection.replaceOne(eq("_id", result.getObjectId("_id")), replacement);
+
+            responseObserver.onNext(
+                    UpdateBlogResponse.newBuilder()
+                            .setBlog(documentToBlog(replacement))
+                            .build()
+            );
+
+            responseObserver.onCompleted();
+
+        }
+
+
+
+    }
+
+    private Blog documentToBlog(Document document) {
+        return Blog.newBuilder()
+                .setAuthorId(document.getString("author_id"))
+                .setTitle(document.getString("title"))
+                .setContent(document.getString("content"))
+                .setId(document.getObjectId("_id").toString())
+                .build();
+
+    }
 }
