@@ -2,6 +2,7 @@ package com.github.abehsu.blog.server;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+import io.grpc.protobuf.services.ProtoReflectionService;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class BlogServer {
 
         Server server = ServerBuilder.forPort(50052)
                 .addService(new BlogServiceImpl())
+                .addService(ProtoReflectionService.newInstance())
                 .useTransportSecurity(
                         new File("ssl/server.crt"),
                         new File("ssl/server.pem")
